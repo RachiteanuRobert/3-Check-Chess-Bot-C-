@@ -1,0 +1,51 @@
+Echipa: 2men1horse
+Membri: Pop Adrian Vasile
+		Rachiteanu Robert-Alexandru
+
+Instructiuni de compilare:
+	Se va da comanda ,,make" pentru crearea fisierului executabil, iar apoi
+~~xboard -fcp "make run" -debug~~ pentru inceperea programului in modul de 
+debug.
+
+Detalii despre structura proiectului:
+	Proiectul este impartit in mai multe fisiere in functie de utilitatea
+functionalitatii acestuia, astfel:
+	-main: Se citesc comenzile si se raspunde corespunzator prin facade.
+	-AI: Genereaza si prelucreaza miscarile folosite.
+	-Board: implementeaza comenzi specifice tablei de sah, ca de exemplu
+	resetarea acesteia in pozitia initiala.
+	-Engine: In functie de miscarile primite de la AI face pe tabla interna
+	(retinuta de program) urmatoarea mutare.
+	-Facade: Comunica cu toate clasele din fisisre. Aici sunt apelate metode
+	in functie de comenzile primite de la xboard, actionandu-se in acord cu
+	functionalitatile cerute.
+
+Detalii despre abordarea algoritmică a etapei:
+	Miscarile facute de engine sunt facute aleator.
+
+
+Surse de inspiratie:
+	https://www.gnu.org/software/xboard/engine-intf.html
+	https://stackoverflow.com/questions/494721/what-are-some-good-resources-for
+	-writing-a-chess-engine
+
+
+ Responsabilitatea fiecărui membru al echipei:
+ 	Pop Adrian Vasile:
+ 		-En Passant; 
+ 		-generarea miscarilor legale pentru anumite piese;
+ 		-retusari de final, comentarii;
+ 		
+
+ 	Rachiteanu Robert-Alexandru:
+		-generarea miscarilor legale pentru anumite piese;
+		-castling;
+ 		-prelucrare date de intrare prin intermediul Facade;
+ 		-README;
+
+ 	Comun:
+ 		-check check;
+ 		-strategie de abordare;
+ 		-citire date de intrare de la xboard;
+ 		-restul claselor;
+
